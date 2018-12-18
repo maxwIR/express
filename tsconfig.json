@@ -1,0 +1,18 @@
+{
+   "compilerOptions": {
+     "types": ["node"],
+     "target": "es6",
+     "lib": ["es2016"],
+     "module": "commonjs",
+     "outDir": "./App",
+     "typeRoots": ["./node_modules/@types"],
+     "strict": true,
+     "experimentalDecorators": true,
+     "sourceMap": true,
+     "noImplicitThis": false,
+     "resolveJsonModule": true,
+     "esModuleInterop": true
+   },
+   "include": ["src/**/*"],
+   "exclude": ["node_modules"]
+}
