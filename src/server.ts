@@ -6,7 +6,7 @@ import {WelcomeController, SplashController} from './controllers';
 // Create a new express application instance
 const app: express.Application = express();
 // The port the express app will listen on
-const port: number = 3000;
+const port: number = 80;
 // Mount the WelcomeController at the /welcome route
 app.use('/welcome', WelcomeController);
 app.use('/', SplashController);
