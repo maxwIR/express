@@ -4,7 +4,7 @@
      "target": "es6",
      "lib": ["es2016"],
      "module": "commonjs",
-     "outDir": "./App",
+     "outDir": "./",
      "typeRoots": ["./node_modules/@types"],
      "strict": true,
      "experimentalDecorators": true,
