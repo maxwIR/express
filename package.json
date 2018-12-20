@@ -2,11 +2,11 @@
   "name": "restfulapi",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app/server.js",
   "scripts": {
     "build": "tsc -p .",
     "watch": "tsc -watch -p .",
-    "start": "node server.js"
+    "start": "node app/server.js"
   },
   "author": "",
   "license": "ISC",

@@ -3,7 +3,7 @@ import { join } from 'path';
 
 const router: Router = Router();
 router.get('/', (req: Request, res: Response) => {
-   res.sendFile(join(__dirname, "../Views/test.html"));
+   res.sendFile(join(__dirname, "../views/test.html"));
 });
 
 
