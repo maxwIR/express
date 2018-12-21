@@ -7,7 +7,6 @@ class AuthTokenHandler {
 
    constructor() {
       this.tokenList = [];
-      instance = this;
    }
 
    public static getInstance(): AuthTokenHandler {
@@ -15,6 +14,21 @@ class AuthTokenHandler {
          return new AuthTokenHandler();
       }
       return instance;
+   }
+
+   public getToken(){
+      let token = 'secured!'
+      if(this.tokenList.indexOf(token)<0){
+         this.tokenList.push(token);
+      }
+      return token;
+   }
+
+   public tokenValid(token: string){
+      if(this.tokenList.indexOf(token)<0){
+         return false;
+      }
+      return true;
    }
 }
 
