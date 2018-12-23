@@ -6,7 +6,7 @@ class AuthTokenHandler {
    tokenList: string[];
 
    constructor() {
-      this.tokenList = [];
+      this.tokenList = ['12345'];
    }
 
    public static getInstance(): AuthTokenHandler {
