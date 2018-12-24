@@ -14,7 +14,7 @@ const urlEndodedParser = bodyParser.urlencoded({extended: false});
 // Mount the WelcomeController at the /welcome route etc
 app.use(cookieParser());
 app.use(urlEndodedParser);
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 app.use('/', SplashController);
 app.use('/api', APIController)
 app.use('/welcome', WelcomeController);
