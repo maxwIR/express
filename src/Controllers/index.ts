@@ -1,4 +1,4 @@
 export * from './welcomeController';
 export * from './splashController';
-export * from './loginController';
+export * from './apiController';
 export * from './securedController';

@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 
 let instance: any = null;
 
@@ -36,3 +36,13 @@ instance = AuthTokenHandler.getInstance();
 Object.freeze(instance);
 
 export default instance as AuthTokenHandler;
+
+export function Authorizer (req: Request, res: Response, next: NextFunction) {
+   let permissions = [];
+   if (req.cookies.AuthToken && AuthTokenHandler.getInstance().tokenValid(req.cookies.AuthToken)){
+      permissions.push('*');
+      next();
+   } else {
+      res.send('failed to authenticate');
+   }
+}

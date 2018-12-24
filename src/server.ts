@@ -4,7 +4,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 // Import WelcomeController from controllers entry point
-import {WelcomeController, SplashController, LoginController, SecuredController} from './controllers';
+import {WelcomeController, SplashController, SecuredController, APIController} from './controllers';
 // Create a new express application instance
 const app: express.Application = express();
 // The port the express app will listen on
@@ -16,8 +16,8 @@ app.use(cookieParser());
 app.use(urlEndodedParser);
 app.use(express.static('public'));
 app.use('/', SplashController);
+app.use('/api', APIController)
 app.use('/welcome', WelcomeController);
-app.use('/login', LoginController);
 app.use('/sec', SecuredController);
 // Serve the application at the given port
 app.listen(port, () => {

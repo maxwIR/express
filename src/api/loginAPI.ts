@@ -1,6 +1,7 @@
 /* app/controllers/welcomeController.ts */
 // Import only what we need from express
 import { Router, Request, Response } from 'express';
+import AuthTokenHandler from '../common/AuthTokenHandler';
 // Assign router to the express.Router() instance
 const router: Router = Router();
 // The / here corresponds to the route that the WelcomeController
@@ -9,7 +10,12 @@ const router: Router = Router();
 
 router.get('/', (req: Request, res: Response) => {
 // Reply with a hello world when no name param is provided
-   res.send('Login here');
+   if (req.cookies.AuthToken && AuthTokenHandler.tokenValid(req.cookies.AuthToken)){
+      res.send('Logged in');
+   } else {
+      res.send('Not logged in');
+   }
+
 });
 
 router.post('/', (req: Request, res: Response) => {
@@ -22,4 +28,4 @@ router.post('/', (req: Request, res: Response) => {
 });
 
 // Export the express.Router() instance to be used by server.ts
-export const LoginController: Router = router;
+export const LoginAPI: Router = router;
