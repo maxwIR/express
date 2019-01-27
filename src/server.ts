@@ -20,11 +20,7 @@ const urlEndodedParser = bodyParser.urlencoded({extended: false});
 app.use(express.static(join(__dirname,'public')));
 
 let router: Router = Router();
-router.use((req: Request, res: Response) => {
-    res.send('hi back');
-});
 
-app.use('/hi', router);
 app.use('*', DefaultController);
 // Serve the application at the given port
 app.listen(port, () => {
