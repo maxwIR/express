@@ -17,7 +17,7 @@ console.log('setting up on port ' + port);
 const urlEndodedParser = bodyParser.urlencoded({extended: false});
 // Mount the WelcomeController at the /welcome route etc
 
-app.use(express.static(join(__dirname,'public')));
+app.use("home", express.static(join(__dirname,'public')));
 
 let router: Router = Router();
 
