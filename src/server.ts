@@ -1,9 +1,6 @@
 /* app/server.ts */
 // Import everything from express and assign it to the express variable
 import express from 'express';
-import { Request, Response } from 'express';
-
-import bodyParser from 'body-parser';
 // Import WelcomeController from controllers entry point
 import {DefaultController} from './controllers';
 // Create a new express application instance

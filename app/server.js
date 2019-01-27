@@ -8,13 +8,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 // Import WelcomeController from controllers entry point
 const controllers_1 = require("./controllers");
-const path_1 = require("path");
 // Create a new express application instance
 const app = express_1.default();
 // The port the express app will listen on
 const port = process.env.PORT || 8080;
 // Mount the WelcomeController at the /welcome route etc
-app.use("home", express_1.default.static(path_1.join(__dirname, 'public')));
+app.use('/', express_1.default.static('public'));
 app.use('*', controllers_1.DefaultController);
 // Serve the application at the given port
 app.listen(port, () => {
